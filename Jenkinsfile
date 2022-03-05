@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage ('checkout scm') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitee-id', url: 'https://gitee.com/liuyik8s/devops-java-sample.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'gitee-id', url: 'https://gitee.com/liuyik8s/python-istio.git']]])
   
             }
         }
