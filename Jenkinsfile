@@ -16,7 +16,7 @@ pipeline {
         DOCKERHUB_NAMESPACE = 'liuyik8s'
         GITEE_ACCOUNT = 'liuyik8s'
         BRANCH_NAME = 'master'
-        APP_NAME = 'flask-demo'
+        APP_NAME = 'python-istio'
         }
 
     stages {
