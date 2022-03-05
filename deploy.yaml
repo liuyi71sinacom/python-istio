@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask-demo
+  name: flask-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flask-demo
+    spec:
+      containers:
+      - image: registry.cn-hangzhou.aliyuncs.com/liuyik8s/flask-demo
+        name: flask-demo
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask-demo
+  name: flask-demo
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: flask-demo
+  type: NodePort
+status:
+  loadBalancer: {}
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: flask-demo-vs
+spec:
+  hosts:
+    - flask-demo
+  http:
+  - route:
+    - destination:
+        host: flask-demo
