@@ -21,7 +21,6 @@ spec:
       - image: registry.cn-hangzhou.aliyuncs.com/liuyik8s/flask-demo
         name: flask-demo
         resources: {}
-status: {}
 ---
 apiVersion: v1
 kind: Service
