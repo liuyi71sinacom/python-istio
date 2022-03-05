@@ -18,7 +18,7 @@ spec:
         app: flask-demo
     spec:
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/liuyik8s/flask-demo
+      - image: registry.cn-hangzhou.aliyuncs.com/liuyik8s/python-istio
         name: flask-demo
         resources: {}
 ---
