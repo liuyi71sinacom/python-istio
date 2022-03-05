@@ -5,7 +5,7 @@ pipeline {
   }
     
    parameters { 
-        string(name: 'TAG_NAME',defaultValue: '1.5',description: '')
+        string(name: 'TAG_NAME',defaultValue: '1.6',description: '')
      }
 
     environment {
